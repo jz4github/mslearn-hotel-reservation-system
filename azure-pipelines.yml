@@ -30,3 +30,4 @@ stages:
         csmParametersFile: 'Azuredeployparameters.json'
         deploymentMode: Incremental
         deploymentOutputs: ResourceGroupDeploymentOutputs
+        overrideParameters: '-acrName $(acrName)'
