@@ -39,9 +39,15 @@
       },
       "acrReplicaLocation": {
         "type": "string",
-        "defaultValue": null,
         "metadata": {
           "description": "Short name for registry replica location."
+        }
+      },
+      "acrReplica": {
+        "type": "bool",
+        "defaultValue": false,
+        "metadata": {
+          "description": "Detectes whether the registry needs to be replicated"
         }
       }
     },
@@ -65,7 +71,7 @@
         }
       },
       {
-        "condition": "[not(empty(parameters('acrReplicaLocation')))]",
+        "condition": "[parameters('acrReplica')]",
         "type": "Microsoft.ContainerRegistry/registries/replications",
         "apiVersion": "2019-12-01-preview",
         "name": "[concat(parameters('acrName'), '/', parameters('acrReplicaLocation'))]",

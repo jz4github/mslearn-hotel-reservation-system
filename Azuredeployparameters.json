@@ -10,6 +10,9 @@
         },
         "acrReplicaLocation": {
             "value": []
+        },
+        "acrReplica":{
+            "value": false
         }
     }
 }
