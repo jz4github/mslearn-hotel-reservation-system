@@ -1,0 +1,30 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- '*'
+
+stages:
+- stage: 'Provision'
+  displayName: 'Provision the Docker Registry and Instance'
+  jobs:
+    - job: 'DeployInfrastructure'
+      displayname: 'Deploy Infrastructure job'
+      pool:
+        vmImage: 'ubuntu-18.04'
+      variables:
+      - group: 'Release'
+      steps:
+      - task: AzureResourceManagerTemplateDeployment@3
+        inputs:
+         deploymentScope: Resource Group
+         action: Create Or Update Resource Group
+         resourceGroupName: 'HRS-RG'
+         location: '$(location)'
+         templateLocation: Linked artifact
+         csmFile: 'AzureDeploy.json'
+         csmParametersFile: 'AzureDeployparameters.json'
+         deploymentMode: Incremental
+         deploymentOutputs: ResourceGroupDeploymentOutputs
