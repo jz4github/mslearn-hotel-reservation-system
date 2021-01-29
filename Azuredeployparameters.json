@@ -7,6 +7,9 @@
         },
         "acrAdminUserEnabled": {
             "value": false
+        },
+        "acrReplicaLocation": {
+            "value": {}
         }
     }
 }
