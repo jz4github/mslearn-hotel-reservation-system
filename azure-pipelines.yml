@@ -10,23 +10,23 @@ stages:
 - stage: 'Provision'
   displayName: 'Provision the Docker Registry and Instance'
   jobs:
-    - job: 'DeployInfrastructure'
-      displayname: 'Deploy Infrastructure job'
-      pool:
-        vmImage: 'ubuntu-18.04'
-      variables:
-      - group: 'Release'
-      steps:
-      - task: AzureResourceManagerTemplateDeployment@3
-        inputs:
-         deploymentScope: Resource Group
-         azureResourceManagerConnection: 'Azure - Hotel Reserved System'
-         subscriptionId: 2d81b07c-e31c-4732-b776-0e270401617d
-         action: Create Or Update Resource Group
-         resourceGroupName: 'HRS-RG'
-         location: '$(location)'
-         templateLocation: Linked artifact
-         csmFile: 'AzureDeploy.json'
-         csmParametersFile: 'AzureDeployparameters.json'
-         deploymentMode: Incremental
-         deploymentOutputs: ResourceGroupDeploymentOutputs
+  - job: 'DeployInfrastructure'
+    displayName: 'Deploy Infrastructure job'
+    pool:
+      vmImage: 'ubuntu-18.04'
+    variables:
+    - group: 'Release'
+    steps:
+    - task: AzureResourceManagerTemplateDeployment@3
+      inputs:
+        deploymentScope: Resource Group
+        azureResourceManagerConnection: 'Azure - Hotel Reserved System'
+        subscriptionId: 2d81b07c-e31c-4732-b776-0e270401617d
+        action: Create Or Update Resource Group
+        resourceGroupName: 'HRS-RG'
+        location: '$(location)'
+        templateLocation: Linked artifact
+        csmFile: 'AzureDeploy.json'
+        csmParametersFile: 'AzureDeployparameters.json'
+        deploymentMode: Incremental
+        deploymentOutputs: ResourceGroupDeploymentOutputs
