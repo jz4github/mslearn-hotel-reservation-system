@@ -39,6 +39,7 @@
       },
       "acrReplicaLocation": {
         "type": "string",
+        "defaultValue": null,
         "metadata": {
           "description": "Short name for registry replica location."
         }
