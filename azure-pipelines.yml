@@ -26,7 +26,7 @@ stages:
         resourceGroupName: 'HRS-RG'
         location: '$(location)'
         templateLocation: Linked artifact
-        csmFile: 'AzureDeploy.json'
-        csmParametersFile: 'AzureDeployparameters.json'
+        csmFile: 'AzureDeployment.json'
+        csmParametersFile: 'AzureDeployment.parameters.json'
         deploymentMode: Incremental
         deploymentOutputs: ResourceGroupDeploymentOutputs
