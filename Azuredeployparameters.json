@@ -11,8 +11,11 @@
         "acrReplicaLocation": {
             "value": "australiasoutheast"
         },
-        "acrReplica":{
+        "acrReplica": {
             "value": false
+        },
+        "acrSku": {
+            "value": "Basic"
         }
     }
 }
