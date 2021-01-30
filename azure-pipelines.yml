@@ -54,6 +54,6 @@ stages:
         buildContext: $(Build.Repository.LocalPath)
         repository: $(webRepository)
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
-        containerRegistry: 'Azure - Hotel Reserved System'
+        containerRegistry: 'ACR-HRS'
         tags: |
           $(tag)
