@@ -53,7 +53,7 @@ stages:
         command: buildAndpush
         buildContext: $(Build.Repository.LocalPath)
         repository: $(webRepository)
-        dockerfile: '$(Build.SourcesDirectory)/mslearn-hotel-reservation-system/Dockerfile'
+        dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         containerRegistry: ''
         tags: |
           $(tag)
