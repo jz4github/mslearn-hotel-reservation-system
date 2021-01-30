@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2
 WORKDIR /src
-COPY ["HotelReservationSystem/HotelReservationSystem.csproj", "HotelReservationSystem/"]
-COPY ["HotelReservationSystemTypes/HotelReservationSystemTypes.csproj", "HotelReservationSystemTypes/"]
+COPY ["/src/HotelReservationSystem/HotelReservationSystem.csproj", "HotelReservationSystem/"]
+COPY ["/src/HotelReservationSystemTypes/HotelReservationSystemTypes.csproj", "HotelReservationSystemTypes/"]
 RUN dotnet restore "HotelReservationSystem/HotelReservationSystem.csproj"
 COPY . .
 WORKDIR "/src/HotelReservationSystem"
