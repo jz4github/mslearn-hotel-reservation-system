@@ -43,7 +43,7 @@ stages:
   - job: 'Build'
     displayName: 'Build Job'
     pool:
-      vmImage: 'ubuntu-18.04'
+      vmImage: 'windows-latest'
     variables:
       - group: 'Release'
     steps:
